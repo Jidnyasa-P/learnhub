@@ -12,7 +12,7 @@
                                                     
 ```
 
-### A Premium Full-Stack E-Learning Platform with Interactive Video Courses
+### A full-stack e-learning platform for video-based courses
 
 <br/>
 
@@ -25,9 +25,9 @@
 
 <br/>
 
-> **Learn and teach anytime, anywhere.** — A modern, full-stack e-learning web application built on the MERN stack with course creation, payment enrollment, interactive video player, progress tracking, and automated completion certificate generation.
+> LearnHub connects students and educators through video courses, enrollment, and progress tracking, built on the MERN stack.
 >
-> 🚧 **Note:** This project is currently runnable locally only. A live hosted deployment is planned — see [Deployment](#-deployment) below for the roadmap.
+> 🚧 Runs locally for now. Hosting decision is still open, see [Deployment](#-deployment).
 
 <br/>
 
@@ -39,7 +39,7 @@
 
 ## 🤝 Contributors
 
-Thanks to all the amazing people who have contributed to **LearnHub**! 🎉
+Thanks to everyone who has contributed to **LearnHub** 🎉
 
 <br/>
 
@@ -73,7 +73,30 @@ Thanks to all the amazing people who have contributed to **LearnHub**! 🎉
 
 ## 🌟 Overview
 
-**learnhub** is a full-stack educational web application designed to connect students with expert educators. It provides students with an intuitive, self-paced learning environment featuring video-based courses, structured progress tracking, and downloadable completion certificates. For educators, the platform offers robust course management and publishing tools, creating a seamless and premium e-learning experience for all users.
+LearnHub is a course platform where teachers upload video lectures and students work through them at their own pace. Students enroll, watch content, mark sections complete, and download a certificate once they finish a course. Teachers get their own dashboard to publish courses and check who's enrolled. Admins can see everything on the platform: users, courses, and payment activity.
+
+<br/>
+
+## 🧭 How it fits together
+
+```mermaid
+flowchart LR
+    A[Student] -->|Browse & Enroll| B(Course Catalog)
+    B --> C{Free or Paid?}
+    C -->|Free| D[Instant Access]
+    C -->|Paid| E[Payment Flow]
+    E --> D
+    D --> F[Video Player]
+    F --> G[Progress Tracking]
+    G --> H[Certificate PDF]
+
+    I[Teacher] -->|Create & Upload| B
+    I --> J[Manage Enrollments]
+
+    K[Admin] -->|Moderate| B
+    K --> L[User Management]
+    K --> M[Payment Logs]
+```
 
 <br/>
 
@@ -85,26 +108,39 @@ Thanks to all the amazing people who have contributed to **LearnHub**! 🎉
 
 | | Technology | Purpose |
 |---|---|---|
-| <img src="https://skillicons.dev/icons?i=express" width="30"/> | **Express.js** | Web server framework for handling routes, middleware, and controllers. |
-| <img src="https://skillicons.dev/icons?i=mongodb" width="30"/> | **MongoDB** | NoSQL database used to store users, courses, payments, and activity logs. |
-| <img src="https://skillicons.dev/icons?i=nodejs" width="30"/> | **Node.js** | JavaScript runtime environment powering the server-side application. |
+| <img src="https://skillicons.dev/icons?i=express" width="30"/> | **Express.js** | Routes, middleware, and controllers |
+| <img src="https://skillicons.dev/icons?i=mongodb" width="30"/> | **MongoDB** | Stores users, courses, payments, and activity logs |
+| <img src="https://skillicons.dev/icons?i=nodejs" width="30"/> | **Node.js** | Runs the server |
 
 ### Frontend
 
 | | Technology | Purpose |
 |---|---|---|
-| <img src="https://skillicons.dev/icons?i=react" width="30"/> | **React** | Frontend library for building a dynamic, component-based user interface. |
-| <img src="https://skillicons.dev/icons?i=mui" width="30"/> | **Material UI (MUI)** | Component library used for styled tables, dashboard buttons, and icons. |
-| <img src="https://skillicons.dev/icons?i=bootstrap" width="30"/> | **Bootstrap** | CSS framework providing responsive grid layouts, forms, and modal components. |
+| <img src="https://skillicons.dev/icons?i=react" width="30"/> | **React** | Component-based UI |
+| <img src="https://skillicons.dev/icons?i=mui" width="30"/> | **Material UI** | Tables, dashboard buttons, icons |
+| <img src="https://skillicons.dev/icons?i=bootstrap" width="30"/> | **Bootstrap** | Grid layouts, forms, modals |
 
 ### Tooling & DevX
 
 | | Technology | Purpose |
 |---|---|---|
-| <img src="https://skillicons.dev/icons?i=vite" width="30"/> | **Vite** | Fast, modern frontend build tool and development server. |
-| <img src="https://skillicons.dev/icons?i=postman" width="30"/> | **Axios** | Promise-based HTTP client for making API requests to the backend. |
+| <img src="https://skillicons.dev/icons?i=vite" width="30"/> | **Vite** | Dev server and build tool |
+| <img src="https://skillicons.dev/icons?i=postman" width="30"/> | **Axios** | HTTP requests to the backend |
 
 </div>
+
+<br/>
+
+### Stack breakdown
+
+```mermaid
+pie showData
+    title Codebase composition (by concern)
+    "Frontend (React/MUI/Bootstrap)" : 45
+    "Backend (Express/Node)" : 30
+    "Database layer (MongoDB/Mongoose)" : 15
+    "Tooling & config" : 10
+```
 
 <br/>
 
@@ -115,32 +151,56 @@ Thanks to all the amazing people who have contributed to **LearnHub**! 🎉
 <td width="33%" valign="top">
 
 ### 👨‍🎓 Student
-- Browse and search courses by title or category.
-- Secure payment-simulated enrollment for paid courses, and instant access to free courses.
-- Stream course content seamlessly with an integrated video player.
-- Track learning progress by marking sections complete and download PDF certificates.
+- Browse and search courses by title or category
+- Enroll instantly in free courses, or pay for premium ones
+- Stream lectures with the built-in video player
+- Mark sections complete and download a certificate
 
 </td>
 <td width="33%" valign="top">
 
-### 👩‍🏫 Teacher / Educator
-- Create new courses with title, categories, description, and pricing options.
-- Upload structured lectures/sections as `.mp4` video files.
-- Manage self-authored courses, including monitoring student enrollment numbers.
-- Delete self-created courses from the library.
+### 👩‍🏫 Teacher
+- Create courses with title, category, description, and price
+- Upload lecture videos as `.mp4` files
+- Track enrollment numbers for your own courses
+- Delete courses you created
 
 </td>
 <td width="33%" valign="top">
 
 ### 🛡️ Admin
-- Access a secure, dedicated administrative portal to monitor the entire platform.
-- Manage users by viewing all registered accounts and deleting accounts if necessary.
-- Manage all platform courses, including the ability to delete any course.
-- View system activity logs, enrollments, and track course payment transactions.
+- View and manage every registered account
+- Remove any course from the platform
+- Review activity logs and enrollment data
+- Track payment transactions platform-wide
 
 </td>
 </tr>
 </table>
+
+<br/>
+
+## 👥 Who does what
+
+```mermaid
+graph TD
+    subgraph Student
+        S1[Browse courses]
+        S2[Enroll]
+        S3[Watch & track progress]
+        S4[Download certificate]
+    end
+    subgraph Teacher
+        T1[Create course]
+        T2[Upload lectures]
+        T3[Monitor enrollments]
+    end
+    subgraph Admin
+        A1[Manage users]
+        A2[Manage courses]
+        A3[View payment logs]
+    end
+```
 
 <br/>
 
@@ -154,16 +214,16 @@ learnhub/
 │   │   ├── controllers/
 │   │   ├── models/             # Mongoose schemas
 │   │   ├── routes/             # Express routes
-│   │   ├── middleware/         # Auth verification middlewares
-│   │   └── config/             # DB Connection configuration
+│   │   ├── middleware/         # Auth verification
+│   │   └── config/             # DB connection setup
 │   ├── .env
 │   └── package.json
 │
 └── frontend/                   # React SPA powered by Vite
     ├── src/
-    │   ├── pages/              # Routing pages
-    │   ├── hooks/              # Custom React hooks (if any)
-    │   └── components/         # Frontend components grouped by Admin/User/Common
+    │   ├── pages/               # Route-level pages
+    │   ├── hooks/                # Custom React hooks
+    │   └── components/           # Grouped by Admin/User/Common
     └── package.json
 ```
 
@@ -171,7 +231,7 @@ learnhub/
 
 ## 🚀 Getting Started
 
-> ℹ️ There is currently no live demo — please run the project locally using the steps below.
+There's no live demo yet, so you'll need to run this locally.
 
 ### Prerequisites
 
@@ -180,7 +240,7 @@ learnhub/
 
 ---
 
-### 1. Clone & Install
+### 1. Clone & install
 
 ```bash
 git clone https://github.com/udaycodespace/learnhub.git
@@ -190,38 +250,34 @@ cd backend && npm install
 cd ../frontend && npm install
 ```
 
-### 2. Configure Environment
+### 2. Configure environment
 
-Create a `backend/.env` file:
+Copy the example environment file to `.env` and fill in your own values:
 
-```env
-PORT=5000
-MONGO_DB=mongodb://localhost:27017/video-course-application
-JWT_KEY=your_jwt_secret_key
-CLIENT_ORIGIN=http://localhost:5173
+```bash
+cp backend/.env.example backend/.env
 ```
 
-### 3. Run Locally
+
+### 3. Run it
 
 ```bash
 # Terminal A — Backend
 cd backend
 npm start
-# → Server running at http://localhost:5000
+# → http://localhost:5000
 ```
 
 ```bash
 # Terminal B — Frontend
 cd frontend
 npm run dev
-# → App running at http://localhost:5173
+# → http://localhost:5173
 ```
 
-### 4. Seed Demo Data *(optional)*
+### 4. Seed demo data *(optional)*
 
-```bash
-# TODO: confirm (No database seeder script available in this project)
-```
+There's no seeder script in this project yet. If you add one, document it here.
 
 <br/>
 
@@ -235,10 +291,11 @@ npm run dev
 
 <br/>
 
-## 🪝 Notable Custom Hooks
+## 🪝 Custom Hooks
+
+None yet. If you build one, add it here with a short usage example:
 
 ```ts
-// TODO: confirm (No custom hooks detected in frontend)
 // const { hookExports } = useCustomHook();
 ```
 
@@ -250,13 +307,13 @@ npm run dev
 
 | Command | Description |
 |---------|-------------|
-| `npm start` | Starts the backend server in development mode using nodemon |
+| `npm start` | Starts the backend with nodemon |
 
 ### Frontend (`frontend/`)
 
 | Command | Description |
 |---------|-------------|
-| `npm run dev` | Starts the Vite development server |
+| `npm run dev` | Starts the Vite dev server |
 | `npm run build` | Builds the production bundle |
 | `npm run preview` | Previews the production build locally |
 
@@ -264,27 +321,17 @@ npm run dev
 
 ## 🌐 Deployment
 
-> 🚧 **Status: Not yet deployed.** LearnHub currently runs in local development only. Hosted deployment is on the roadmap — planned steps below.
+Not deployed yet, and that's on purpose for now. I'd rather see how the project grows and what contributors actually need before locking in a hosting setup.
 
-**Planned deployment plan:**
+If you have thoughts on where this should live (Vercel, Render, Railway, self-hosted, or something else), open a discussion or an issue. That'll shape the decision more than me guessing upfront.
 
-1. **Environment variables** — `PORT`, `MONGO_DB`, `JWT_KEY`, `CLIENT_ORIGIN` will need to be set on the hosting provider.
-2. **Frontend (planned)** — Build via `npm run build` and host the static `dist/` output on a platform such as Vercel or Netlify.
-3. **Backend (planned)** — Deploy the Express server to a Node-friendly host such as Render or Railway, connected to a managed MongoDB instance (e.g. MongoDB Atlas).
-4. **Database (planned)** — Migrate from local MongoDB to a managed cloud instance before go-live.
-
-```bash
-# Example (future): run backend with PM2 once deployed
-pm2 start index.js --name learnhub-api
-```
-
-*Contributions toward CI/CD setup and deployment configuration are welcome — see [CONTRIBUTING.md](CONTRIBUTING.md).*
+Want to help set up CI/CD once a direction is picked? Check [CONTRIBUTING.md](CONTRIBUTING.md).
 
 <br/>
 
 ## 📄 License
 
-Distributed under the **ISC License**. See [`LICENSE`](LICENSE) for more information.
+Distributed under the **ISC License**. See [`LICENSE`](LICENSE) for details.
 
 ---
 
@@ -292,9 +339,9 @@ Distributed under the **ISC License**. See [`LICENSE`](LICENSE) for more informa
 
 <br/>
 
-**Built with 💙 as a flagship full-stack e-learning project**
+**Built as a full-stack e-learning project**
 
-*If you found this project helpful, please consider giving it a ⭐*
+*If this was useful, a ⭐ helps other people find it*
 
 <br/>
 
