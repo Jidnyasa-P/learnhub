@@ -1,0 +1,86 @@
+# ==========================
+# Dependencies
+# ==========================
+node_modules/
+**/node_modules/
+
+# ==========================
+# Build Output
+# ==========================
+dist/
+build/
+coverage/
+.vite/
+
+# ==========================
+# Environment Variables
+# ==========================
+.env
+.env.*
+!.env.example
+
+# ==========================
+# Logs
+# ==========================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# ==========================
+# Runtime Files
+# ==========================
+*.pid
+*.seed
+*.pid.lock
+
+# ==========================
+# OS Files
+# ==========================
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ==========================
+# IDE
+# ==========================
+.vscode/
+.idea/
+*.swp
+
+# ==========================
+# Backend Uploads
+# ==========================
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# ==========================
+# Database
+# ==========================
+*.sqlite
+*.db
+
+# ==========================
+# Cache
+# ==========================
+.cache/
+.eslintcache
+
+# ==========================
+# Package Managers
+# ==========================
+.pnpm-store/
+.npm/
+.yarn/
+
+# ==========================
+# Docker
+# ==========================
+docker-compose.override.yml
+
+# ==========================
+# Temporary Files
+# ==========================
+tmp/
+temp/
