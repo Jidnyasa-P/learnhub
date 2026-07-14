@@ -20,7 +20,7 @@
 [![Express](https://img.shields.io/badge/Express-v4.18.2-000000?style=for-the-badge&logo=express&logoColor=black)](https://expressjs.com)
 [![React](https://img.shields.io/badge/React-v18.2.0-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://react.dev)
 [![Vite](https://img.shields.io/badge/Vite-v4.4.5-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev)
-[![License: ISC](https://img.shields.io/badge/License-ISC-F59E0B?style=for-the-badge)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-F59E0B?style=for-the-badge)](LICENSE)
 [![Status](https://img.shields.io/badge/Status-Local_Development-orange?style=for-the-badge)](#-deployment)
 
 <br/>
@@ -31,45 +31,11 @@
 
 <br/>
 
-[Features](#-key-features) · [Tech Stack](#-tech-stack) · [Getting Started](#-getting-started) · [Demo Accounts](#-demo-accounts) · [Architecture](#-project-structure) · [Deployment](#-deployment)
+[Features](#-key-features) · [Tech Stack](#-tech-stack) · [Getting Started](#-getting-started) · [Demo Accounts](#-demo-accounts) · [Architecture](#-project-structure) · [Deployment](#-deployment) · [Open Source](#️-open-source-programs) · [License](#-license)
 
 ---
 
 </div>
-
-## 🤝 Contributors
-
-Thanks to everyone who has contributed to **LearnHub** 🎉
-
-<br/>
-
-<div align="center">
-
-<table>
-  <tbody>
-    <tr>
-      <!-- Repeat this <td> block for each contributor -->
-      <td align="center" valign="top" width="14.28%">
-        <a href="https://github.com/udaycodespace">
-          <img src="https://github.com/udaycodespace.png" width="80px;" style="border-radius:50%" alt="udaycodespace"/>
-          <br/><sub><b>udaycodespace</b></sub>
-        </a>
-        <br/>💻 🐛 ⚡ 🎨 📖
-      </td>
-      <!-- /repeat -->
-    </tr>
-  </tbody>
-</table>
-
-</div>
-
-<br/>
-
-> 💻 Code &nbsp;·&nbsp; 🐛 Bug fix &nbsp;·&nbsp; 🧪 Tests &nbsp;·&nbsp; 🔒 Security &nbsp;·&nbsp; ⚡ Performance &nbsp;·&nbsp; 🎨 Design &nbsp;·&nbsp; 📖 Docs &nbsp;·&nbsp; 🚇 Infrastructure &nbsp;·&nbsp; ♿ Accessibility &nbsp;·&nbsp; 👀 Review
-
----
-
-<br/>
 
 ## 🌟 Overview
 
@@ -256,7 +222,6 @@ Copy the example environment file to `.env` and fill in your own values:
 cp backend/.env.example backend/.env
 ```
 
-
 ### 3. Run it
 
 ```bash
@@ -342,11 +307,102 @@ If you have thoughts on where this should live (Vercel, Render, Railway, self-ho
 
 Want to help set up CI/CD once a direction is picked? Check [CONTRIBUTING.md](CONTRIBUTING.md).
 
+---
+
+<br/>
+
+## ❄️ Open Source Programs!
+
+<table>
+<tr>
+  <td align="center">
+<a href="https://summerofcode.xyz/"><img width="80px" src="https://github.com/World-of-ML/DL-Simplified/assets/68724349/67bf9f12-3031-495d-a884-76c1c6437707" /><br /><sub><b>ECSoC 2026</b></sub></a>
+ </td>
+</tr>
+</table>
+
+<br/>
+
+> [!NOTE]
+> ⚠️ **Heads up:** This README describes the intended feature set (video uploads, progress tracking, etc.), but the current codebase doesn't fully match it yet — some described features are missing, partial, or not wired up in the UI. That gap is your opportunity: find the mismatches and raise them as issues.
+>
+> ⏰ **Deadline: 16/07/2026.** If these gaps aren't raised as issues by then, I'll manually go through and file them all myself — after that, you can only claim them via `/assign`, not report them first.
+
+<br/>
+
+## 🤔 New to Open Source programs/events!
+
+Here are a few articles that will help you get an idea of how to start contributing to open source projects:
+You can refer to the following articles on the basics of Git and Github.
+- [Watch this video to get started, if you have no clue about open source](https://youtu.be/SYtPC9tHYyQ)
+- [Forking a Repo](https://help.github.com/en/github/getting-started-with-github/fork-a-repo)
+- [Cloning a Repo](https://help.github.com/en/desktop/contributing-to-projects/creating-a-pull-request)
+- [How to create a Pull Request](https://opensource.com/article/19/7/create-pull-request-github)
+- [Getting started with Git and GitHub](https://towardsdatascience.com/getting-started-with-git-and-github-6fcd0f2d4ac6)
+
+<br/>
+
+## 🧑‍💻 Project Maintainer
+
+I'm **udaycodespace**, and I created and maintain LearnHub.
+
+<br/>
+
+## 🤝 Contributors
+
+Contributors who submit PRs will be added to the table below.
+
+<br/>
+
+<div align="center">
+
+<table>
+  <tbody>
+    <tr>
+      <!-- New contributors get added here -->
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+<br/>
+
+> 💻 Code &nbsp;·&nbsp; 🐛 Bug fix &nbsp;·&nbsp; 🧪 Tests &nbsp;·&nbsp; 🔒 Security &nbsp;·&nbsp; ⚡ Performance &nbsp;·&nbsp; 🎨 Design &nbsp;·&nbsp; 📖 Docs &nbsp;·&nbsp; 🚇 Infrastructure &nbsp;·&nbsp; ♿ Accessibility &nbsp;·&nbsp; 👀 Review
+
+---
+
 <br/>
 
 ## 📄 License
 
-Distributed under the **ISC License**. See [`LICENSE`](LICENSE) for details.
+Distributed under the **MIT License**.
+
+```
+MIT License
+
+Copyright (c) 2026 udaycodespace
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+See [`LICENSE`](LICENSE) for the full file.
 
 ---
 
@@ -363,3 +419,6 @@ Distributed under the **ISC License**. See [`LICENSE`](LICENSE) for details.
 [![Tech](https://skillicons.dev/icons?i=mongodb,express,react,nodejs,mui,bootstrap,vite)](https://skillicons.dev)
 
 </div>
+```
+
+Want me to save this to a file and drop it as an artifact/download too, or is copy-paste good for you?
