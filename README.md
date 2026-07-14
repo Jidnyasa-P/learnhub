@@ -311,13 +311,17 @@ Want to help set up CI/CD once a direction is picked? Check [CONTRIBUTING.md](CO
 
 <br/>
 
-## ❄️ Open Source Programs!
+## ❄️ Open Source Program!
 
 <table>
 <tr>
   <td align="center">
-<a href="https://summerofcode.xyz/"><img width="80px" src="https://github.com/World-of-ML/DL-Simplified/assets/68724349/67bf9f12-3031-495d-a884-76c1c6437707" /><br /><sub><b>ECSoC 2026</b></sub></a>
- </td>
+    <a href="https://summerofcode.xyz/">
+      <img width="80px" src="https://raw.githubusercontent.com/udaycodespace/learnhub/main/assets/ECSoC26.webp" />
+      <br />
+      <sub><b>ECSoC 2026</b></sub>
+    </a>
+  </td>
 </tr>
 </table>
 
@@ -342,9 +346,15 @@ You can refer to the following articles on the basics of Git and Github.
 
 <br/>
 
-## 🧑‍💻 Project Maintainer
+<h2>🧑‍💻 Project Maintainer</h2>
 
-I'm **udaycodespace**, and I created and maintain LearnHub.
+<p align="center">
+  <img src="https://github.com/udaycodespace.png" width="80px" />
+  <br />
+  <b>udaycodespace</b>
+  <br />
+  Creator & Maintainer of LearnHub
+</p>
 
 <br/>
 
@@ -359,7 +369,15 @@ Contributors who submit PRs will be added to the table below.
 <table>
   <tbody>
     <tr>
-      <!-- New contributors get added here -->
+      <td align="center">
+        <a href="https://github.com/Jidnyasa-P">
+          <img src="https://github.com/Jidnyasa-P.png" width="80px" />
+          <br />
+          <sub><b>Jidnyasa-P</b></sub>
+          <br />
+          <sub>🎨 Frontend</sub>
+        </a>
+      </td>
     </tr>
   </tbody>
 </table>
@@ -372,35 +390,9 @@ Contributors who submit PRs will be added to the table below.
 
 ---
 
-<br/>
-
 ## 📄 License
 
 Distributed under the **MIT License**.
-
-```
-MIT License
-
-Copyright (c) 2026 udaycodespace
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
 
 See [`LICENSE`](LICENSE) for the full file.
 
@@ -419,6 +411,3 @@ See [`LICENSE`](LICENSE) for the full file.
 [![Tech](https://skillicons.dev/icons?i=mongodb,express,react,nodejs,mui,bootstrap,vite)](https://skillicons.dev)
 
 </div>
-```
-
-Want me to save this to a file and drop it as an artifact/download too, or is copy-paste good for you?
