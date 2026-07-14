@@ -14,7 +14,12 @@ const {
   sendCourseContentController,
   completeSectionController,
   sendAllCoursesUserController,
+  verifyOtpController,
+  forgotPasswordController,
+  resetPasswordController,
 } = require("../controllers/userControllers");
+
+const checkRole = require("../middlewares/roleMiddleware");
 
 const router = express.Router();
 
@@ -47,6 +52,7 @@ router.post("/login", loginController);
 router.post(
   "/addcourse",
   authMiddleware,
+  checkRole(["teacher", "admin"]),
   // upload.single('C_image'),
   upload.array("S_content"),
   postCourseController
@@ -57,12 +63,14 @@ router.get("/getallcourses", getAllCoursesController);
 router.get(
   "/getallcoursesteacher",
   authMiddleware,
+  checkRole(["teacher", "admin"]),
   getAllCoursesUserController
 );
 
 router.delete(
   "/deletecourse/:courseid",
   authMiddleware,
+  checkRole(["teacher", "admin"]),
   deleteCourseController
 );
 
@@ -81,5 +89,9 @@ router.get(
 router.post("/completemodule", authMiddleware, completeSectionController);
 
 router.get("/getallcoursesuser", authMiddleware, sendAllCoursesUserController);
+
+router.post("/verify-otp", verifyOtpController);
+router.post("/forgot-password", forgotPasswordController);
+router.post("/reset-password", resetPasswordController);
 
 module.exports = router;
