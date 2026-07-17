@@ -364,6 +364,7 @@ Contributors who submit PRs will be added to the table below.
 
 <br/>
 
+<!-- CONTRIBUTORS-START -->
 <div align="center">
 
 <table>
@@ -383,6 +384,7 @@ Contributors who submit PRs will be added to the table below.
 </table>
 
 </div>
+<!-- CONTRIBUTORS-END -->
 
 <br/>
 
