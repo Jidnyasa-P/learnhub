@@ -364,6 +364,7 @@ Contributors who submit PRs will be added to the table below.
 
 <br/>
 
+<!-- CONTRIBUTORS-START -->
 <div align="center">
 
 <table>
@@ -378,11 +379,21 @@ Contributors who submit PRs will be added to the table below.
           <sub>🎨 Frontend</sub>
         </a>
       </td>
+      <td align="center">
+        <a href="https://github.com/Aryanbuha890">
+          <img src="https://github.com/Aryanbuha890.png" width="80px" />
+          <br />
+          <sub><b>Aryan Buha</b></sub>
+          <br />
+          <sub>🎨 Frontend</sub>
+        </a>
+      </td>
     </tr>
   </tbody>
 </table>
 
 </div>
+<!-- CONTRIBUTORS-END -->
 
 <br/>
 
