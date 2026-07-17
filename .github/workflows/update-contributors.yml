@@ -8,6 +8,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: update-contributors
+  cancel-in-progress: false
+
 jobs:
   update-readme:
     if: github.event.pull_request.merged == true
