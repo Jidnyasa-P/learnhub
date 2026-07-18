@@ -13,6 +13,7 @@ import {
 } from "@mui/material";
 import axiosInstance from "../common/AxiosInstance";
 import PaymentRecords from "./PaymentRecords";
+import ActivityLogs from "./ActivityLogs";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -78,6 +79,7 @@ const AdminHome = () => {
     try {
       const response = await axiosInstance.delete(
         `api/admin/deleteuser/${userId}`,
+        `api/user/deleteuser/${userId}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -128,6 +130,18 @@ const AdminHome = () => {
 
       {activeSection === "payments" ? (
         <PaymentRecords />
+          variant={
+            activeSection === "activity-logs" ? "contained" : "outlined"
+          }
+          color="inherit"
+          onClick={() => setActiveSection("activity-logs")}
+        >
+          Activity Logs
+        </Button>
+      </nav>
+
+      {activeSection === "activity-logs" ? (
+        <ActivityLogs />
       ) : (
         <section style={{ padding: "20px" }} aria-labelledby="users-title">
           <h1 id="users-title" style={{ marginBottom: "18px" }}>
@@ -151,10 +165,10 @@ const AdminHome = () => {
                 <TableHead>
                   <TableRow>
                     <StyledTableCell>User ID</StyledTableCell>
-                    <StyledTableCell>User Name</StyledTableCell>
-                    <StyledTableCell>Email</StyledTableCell>
-                    <StyledTableCell>Type</StyledTableCell>
-                    <StyledTableCell>Action</StyledTableCell>
+                    <StyledTableCell align="left">User Name</StyledTableCell>
+                    <StyledTableCell align="left">Email</StyledTableCell>
+                    <StyledTableCell align="left">Type</StyledTableCell>
+                    <StyledTableCell align="left">Action</StyledTableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
