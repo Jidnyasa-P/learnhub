@@ -25,9 +25,9 @@
 
 <br/>
 
-> LearnHub connects students and educators through video courses, enrollment, and progress tracking, built on the MERN stack.
+> LearnHub is a MERN app where students enroll in video courses, teachers upload lectures, and progress gets tracked along the way.
 >
-> 🚧 Runs locally for now. Hosting decision is still open, see [Deployment](#-deployment).
+> 🚧 Only runs locally right now. Haven't picked a host yet, see [Deployment](#-deployment).
 
 <br/>
 
@@ -195,7 +195,7 @@ learnhub/
 
 ## 🚀 Getting Started
 
-There's no live demo yet, so you'll need to run this locally.
+No live demo yet, so you'll need to run this locally.
 
 ### Prerequisites
 
@@ -264,10 +264,10 @@ After running the seed script, you can log in immediately using these credential
 
 ## 🛠 Roadmap / Not Yet Implemented
 
-The following features are planned for future releases or currently exist as mock/partial integrations:
-- **Real Payment Gateway Integration**: The platform uses a mock card form that immediately enrolls the student without any real charge. Payment records (card details, status) are stored in MongoDB and accessible via a backend API route, but no React admin page reads them. Integration with Stripe or Razorpay is planned.
-- **Admin Activity Log Viewer**: User logins are recorded to MongoDB (`ActivityLog` collection) by the backend on every login, but no React frontend component reads or displays this data. The feature exists at the data layer only.
-- **Cloud Video Hosting (Cloudinary)**: Video uploads are handled locally via Multer, stored in `./uploads/` on the server filesystem. Cloudinary env vars are present but the SDK is not integrated. Cloud hosting is planned.
+A few things exist in some form but aren't finished yet:
+- **Real Payment Gateway Integration**: Right now checkout is a mock card form that enrolls the student without charging anything. Payment records (card details, status) get stored in MongoDB and are reachable through a backend API route, but no admin page in the UI reads them yet. Stripe or Razorpay integration is planned.
+- **Admin Activity Log Viewer**: Every login gets logged to MongoDB in an `ActivityLog` collection, but there's no frontend component that displays it. The data's there, the screen for it isn't.
+- **Cloud Video Hosting (Cloudinary)**: Videos are uploaded through Multer and saved locally in `./uploads/` on the server. Cloudinary env vars exist in the config, but the SDK itself isn't wired up yet.
 
 <br/>
 
@@ -301,9 +301,9 @@ None yet. If you build one, add it here with a short usage example:
 
 ## 🌐 Deployment
 
-Not deployed yet, and that's on purpose for now. I'd rather see how the project grows and what contributors actually need before locking in a hosting setup.
+Not deployed yet, on purpose. I'd rather see how the project grows and what contributors actually need before locking in a hosting setup.
 
-If you have thoughts on where this should live (Vercel, Render, Railway, self-hosted, or something else), open a discussion or an issue. That'll shape the decision more than me guessing upfront.
+If you have thoughts on where this should live — Vercel, Render, Railway, self-hosted, or something else — open a discussion or an issue. That'll shape the decision more than me guessing upfront.
 
 Want to help set up CI/CD once a direction is picked? Check [CONTRIBUTING.md](CONTRIBUTING.md).
 
@@ -324,13 +324,6 @@ Want to help set up CI/CD once a direction is picked? Check [CONTRIBUTING.md](CO
   </td>
 </tr>
 </table>
-
-<br/>
-
-> [!NOTE]
-> ⚠️ **Heads up:** This README describes the intended feature set (video uploads, progress tracking, etc.), but the current codebase doesn't fully match it yet — some described features are missing, partial, or not wired up in the UI. That gap is your opportunity: find the mismatches and raise them as issues.
->
-> ⏰ **Deadline: 16/07/2026.** If these gaps aren't raised as issues by then, I'll manually go through and file them all myself — after that, you can only claim them via `/assign`, not report them first.
 
 <br/>
 
@@ -376,7 +369,25 @@ Contributors who submit PRs will be added to the table below.
           <br />
           <sub><b>Jidnyasa-P</b></sub>
           <br />
-          <sub>🎨 Frontend</sub>
+          <sub>🎨 Frontend · 💻 Code</sub>
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://github.com/Aryanbuha890">
+          <img src="https://github.com/Aryanbuha890.png" width="80px" />
+          <br />
+          <sub><b>Aryanbuha890</b></sub>
+          <br />
+          <sub>🚇 Infrastructure</sub>
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://github.com/Hunter69240">
+          <img src="https://github.com/Hunter69240.png" width="80px" />
+          <br />
+          <sub><b>Hunter69240</b></sub>
+          <br />
+          <sub>🎨 Design</sub>
         </a>
       </td>
     </tr>
@@ -407,6 +418,8 @@ See [`LICENSE`](LICENSE) for the full file.
 **Built as a full-stack e-learning project**
 
 *If this was useful, a ⭐ helps other people find it*
+
+Questions, ideas, or just want to hang out? Join the [Discord](https://discord.gg/EPjNHEkMb).
 
 <br/>
 
