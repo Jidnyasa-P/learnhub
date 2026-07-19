@@ -390,10 +390,18 @@ Contributors who submit PRs will be added to the table below.
           <sub>🎨 Design</sub>
         </a>
       </td>
+      <td align="center">
+        <a href="https://github.com/teja-311">
+          <img src="https://github.com/teja-311.png" width="80px" />
+          <br />
+          <sub><b>teja-311</b></sub>
+          <br />
+          <sub>🐛 Bug fix</sub>
+        </a>
+      </td>
     </tr>
   </tbody>
 </table>
-
 </div>
 <!-- CONTRIBUTORS-END -->
 
