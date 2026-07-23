@@ -9,6 +9,7 @@ import html2canvas from "html2canvas";
 import { jsPDF } from "jspdf";
 import { Button } from '@mui/material';
 import BookmarkButton from "../../bookmarks/BookmarkButton";
+import CourseReviews from "../../reviews/CourseReviews";
 
 const CourseContent = () => {
    const user = useContext(UserContext)
@@ -178,7 +179,10 @@ const CourseContent = () => {
                   </div>
                </div>
                <Button onClick={() => downloadPdfDocument('certificate-download')} style={{ float: 'right', marginTop: 3 }}>Download Certificate</Button>
-
+               <CourseReviews
+  courseId={courseId}
+  courseTitle={courseTitle}
+/>
             </Modal.Body>
          </Modal>
       </>
