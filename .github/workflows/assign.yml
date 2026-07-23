@@ -1,6 +1,8 @@
 name: Issue Assignment Manager
 
 on:
+  issues:
+    types: [assigned]
   issue_comment:
     types: [created]
 
@@ -10,13 +12,74 @@ permissions:
   contents: read
 
 jobs:
-  assign:
+  manual-assignment-welcome:
+    if: ${{ github.event_name == 'issues' && github.event.action == 'assigned' && !github.event.issue.pull_request }}
     runs-on: ubuntu-latest
-    if: ${{ !github.event.issue.pull_request }}
+
+    steps:
+      - name: Welcome manually assigned contributor
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const issue = context.payload.issue;
+            const assignee = context.payload.assignee;
+            const assigner = context.payload.assigner || context.payload.sender;
+
+            if (!issue || !assignee) {
+              core.info("Missing issue or assignee. Skipping.");
+              return;
+            }
+
+            const issueNumber = issue.number;
+            const marker = `<!-- learnhub-manual-assign:${assignee.login.toLowerCase()} -->`;
+
+            const comments = await github.paginate(github.rest.issues.listComments, {
+              owner,
+              repo,
+              issue_number: issueNumber,
+              per_page: 100
+            });
+
+            const alreadyCommented = comments.some(comment =>
+              String(comment.body || "").includes(marker)
+            );
+
+            if (alreadyCommented) {
+              core.info(`Manual assignment welcome already exists for @${assignee.login}.`);
+              return;
+            }
+
+            await github.rest.issues.createComment({
+              owner,
+              repo,
+              issue_number: issueNumber,
+              body: `${marker}
+👋 Hi @${assignee.login}, you have been assigned to this issue by @${assigner?.login || "a maintainer"}.
+
+Welcome to LearnHub. Please make sure you:
+- Star the repository
+- Fork the repository
+- Read \`CONTRIBUTING.md\`
+- Read \`CODE_OF_CONDUCT.md\`
+- Understand the issue clearly before starting
+
+Please share meaningful progress within 3 days, or the issue may be reassigned.
+
+If you need help or may be delayed, please join Discord and message there with your GitHub username.`
+            });
+
+  assign-command:
+    if: ${{ github.event_name == 'issue_comment' && !github.event.issue.pull_request }}
+    runs-on: ubuntu-latest
+
     steps:
       - name: Handle /assign and /unassign commands
         uses: actions/github-script@v7
         with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const owner = context.repo.owner;
             const repo = context.repo.repo;
@@ -54,7 +117,9 @@ jobs:
                 repo,
                 username: commenter
               });
-              isMaintainer = ["admin", "write"].includes(permission.permission) || ["admin", "maintain", "write"].includes(permission.role_name);
+              isMaintainer =
+                ["admin", "write"].includes(permission.permission) ||
+                ["admin", "maintain", "write"].includes(permission.role_name);
             } catch (e) {}
 
             const currentAssignees = (issue.assignees || []).map(a => a.login);
@@ -87,7 +152,10 @@ jobs:
                   owner,
                   repo,
                   issue_number: issueNumber,
-                  body: `@${commenter}, since this issue was opened by someone else, please comment with your approach along with \`/assign\`.\n\nExample:\n\`/assign I will reproduce the issue locally, trace the affected component flow, and submit a tested fix.\``
+                  body: `@${commenter}, since this issue was opened by someone else, please comment with your approach along with \`/assign\`.
+
+Example:
+\`/assign I will reproduce the issue locally, trace the affected component flow, and submit a tested fix.\``
                 });
                 return;
               }
@@ -159,8 +227,26 @@ jobs:
                 isForceAssign
                   ? `🎯 @${targetUser} has been assigned to this issue by a maintainer. Please share progress within 3 days, or the issue may be opened for someone else.`
                   : isSelfIssue
-                    ? `🎉 @${targetUser} has been assigned to this issue. Please share meaningful progress within 3 days, or it may be made available to others.`
-                    : `🎉 @${targetUser} has been assigned to this issue based on the proposed approach. Please share meaningful progress within 3 days, or it may be made available to others.`;
+                    ? `🎉 @${targetUser} has been assigned to this issue. Welcome to LearnHub.
+
+Please make sure you:
+- Star the repository
+- Fork the repository
+- Read \`CONTRIBUTING.md\`
+- Read \`CODE_OF_CONDUCT.md\`
+- Understand the issue clearly before starting
+
+Please share meaningful progress within 3 days, or it may be made available to others.`
+                    : `🎉 @${targetUser} has been assigned to this issue based on the proposed approach. Welcome to LearnHub.
+
+Please make sure you:
+- Star the repository
+- Fork the repository
+- Read \`CONTRIBUTING.md\`
+- Read \`CODE_OF_CONDUCT.md\`
+- Understand the issue clearly before starting
+
+Please share meaningful progress within 3 days, or it may be made available to others.`;
 
               await github.rest.issues.createComment({
                 owner,
